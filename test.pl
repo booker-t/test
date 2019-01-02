@@ -22,6 +22,19 @@ if ($res -> as_string =~ /HTTP\/1\.1 200 OK/) {
 	print $res -> as_string, "\n";
 
 # "commits_url": "https://api.github.com/repos/booker-t/test/commits{/sha}",
+# "commits_url": "https://api.github.com/repos/booker-t/test/commits/master"
+
+
+
+
+	print "\n\n";
+
+	my $res = $ua->get(
+    'https://api.github.com/repos/booker-t/test/commits/master',
+    X_CurlOpt_Verbose => 1,
+	);
+
+	print $res -> as_string, "\n";
 
 
 } else {
